@@ -343,5 +343,20 @@ def list_prof(list_type):
                           list_type=list_type, 
                           professions=professions)
 
+@app.route('/answer')
+@app.route('/auto_answer')
+def auto_answer():
+    param = {}
+    param['title'] = 'Анкета'
+    param['surname'] = 'Watny'
+    param['name'] = 'Mark'
+    param['education'] = 'выше среднего'
+    param['profession'] = 'штурман марсохода'
+    param['sex'] = 'male'
+    param['motivation'] = 'Всегда мечтал застрять на Марсе!'
+    param['ready'] = 'True'
+    
+    return render_template('auto_answer.html', **param)
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
