@@ -80,3 +80,13 @@ form label {
     color: #212529;
     font-weight: normal;
 }
+
+.astronauts-list {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.astronauts-list p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}

@@ -367,5 +367,20 @@ def login():
         return 'Доступ разрешён'
     return render_template('access.html', title='Аварийный доступ', form=form)
 
+@app.route('/distribution')
+def distribution():
+    astronauts = [
+        'Ридли Скотт',
+        'Энди Уир',
+        'Марк Уотни',
+        'Венката Капур',
+        'Тедди Сандерс',
+        'Шон Бин'
+    ]
+    
+    return render_template('distribution.html', 
+                          title='Размещение по каютам',
+                          astronauts=astronauts)
+
 if __name__ == '__main__':
     app.run(port=8000, host='127.0.0.1')
