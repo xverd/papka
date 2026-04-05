@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, url_for
+from accessform import AccessForm
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'mars_mission_secret_key'
 last_image = None
 
 professions = [
@@ -358,5 +360,12 @@ def auto_answer():
     
     return render_template('auto_answer.html', **param)
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = AccessForm()
+    if form.validate_on_submit():
+        return 'Доступ разрешён'
+    return render_template('access.html', title='Аварийный доступ', form=form)
+
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    app.run(port=8000, host='127.0.0.1')

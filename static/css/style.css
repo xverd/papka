@@ -7,7 +7,8 @@ h1.main-title {
 }
 
 h2 {
-   color: #333
+    color: #212529;
+    font-weight: bold;
 }
 
 h4 {
@@ -62,4 +63,20 @@ form.login_form {
 
 .answer-block strong {
     color: #495057;
+}
+.emblem-inline {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+form .form-control {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+form label {
+    color: #212529;
+    font-weight: normal;
 }

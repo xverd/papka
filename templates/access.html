@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>
+    <img src="{{ url_for('static', filename='img/emblem.png') }}" alt="MARS" class="emblem-inline">
+    Аварийный доступ
+</h2>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    
+    <p>
+        {{ form.astronaut_id.label }}<br>
+        {{ form.astronaut_id(class="form-control") }}
+    </p>
+    
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(class="form-control", type="password") }}
+    </p>
+    
+    <p>
+        {{ form.captain_id.label }}<br>
+        {{ form.captain_id(class="form-control") }}
+    </p>
+    
+    <p>
+        {{ form.captain_password.label }}<br>
+        {{ form.captain_password(class="form-control", type="password") }}
+    </p>
+    
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
