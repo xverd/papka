@@ -334,8 +334,7 @@ def load_photo():
         if f and f.filename:
             last_image = f.filename
             f.save(f'static/img/{f.filename}')
-        return "Фотография загружена"
-    
+            
     return render_template('load_photo.html', image=last_image)
 
 @app.route('/list_prof/<list_type>')
@@ -363,8 +362,6 @@ def auto_answer():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = AccessForm()
-    if form.validate_on_submit():
-        return 'Доступ разрешён'
     return render_template('access.html', title='Аварийный доступ', form=form)
 
 @app.route('/distribution')
